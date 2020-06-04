@@ -1,16 +1,21 @@
 import React from "react"
 import { bool, func } from "prop-types"
-import { StyledBurgerNavigation } from "components/molecules/BurgerNavigation/BurgerNavigation.styled.js"
+import { StyledBurgerNavigation } from "./BurgerNavigation.styled"
 
+const BurgerNavigation = ({ open, setOpen, ...props }) => {
+  const isExpanded = open ? true : false
 
-
-
-const BurgerNavigation = ({open,setOpen}) => {
   return (
-    <StyledBurgerNavigation open={open} onClick={() => setOpen(!open)}>
-      <div />
-      <div />
-      <div />
+    <StyledBurgerNavigation
+      aria-label="Toggle menu"
+      aria-expanded={isExpanded}
+      open={open}
+      onClick={() => setOpen(!open)}
+      {...props}
+    >
+      <span />
+      <span />
+      <span />
     </StyledBurgerNavigation>
   )
 }
@@ -21,3 +26,5 @@ BurgerNavigation.propTypes = {
 }
 
 export default BurgerNavigation
+
+

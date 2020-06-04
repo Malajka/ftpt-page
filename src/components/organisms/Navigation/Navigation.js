@@ -1,73 +1,27 @@
-import React, { useState } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React, { useState, useRef } from "react"
+import { useOnClickOutside } from "hooks/hooks.js"
 import BurgerNavigation from "components/molecules/BurgerNavigation/BurgerNavigation"
+import Navbar from "components/molecules/Navbar/Navbar"
 import Menu from "components/molecules/Menu/Menu.js"
-// import styled from "styled-components"
-// import Link from "components/atoms/Link/Link"
 
-// const NavWrapper = styled.div`
-//   display: flex;
-//   justify-content: flex-start;
-//   justify-content: space-between;
-//   background-color: ${({ theme }) => theme.main};
-//   height: 160px;
-//   align-items: center;
-//   padding: 0 5rem;
-// `
-// const NavList = styled.ul`
-//   display: flex;
-//   justify-content: space-between;
-//   width: 70%;
-// `
-
-// const Logo = styled.img``
-
+const isMobile = window.innerWidth <= 500
 
 const Navigation = () => {
   const [open, setOpen] = useState(false)
+  const node = useRef();
+ useOnClickOutside(node, () => setOpen(false))
   return (
-    <div>
-      <BurgerNavigation open={open} setOpen={setOpen} />
-      <Menu open={open} setOpen={setOpen} />
-    </div>
+    <>
+      {isMobile ? (
+        <div ref={node}>
+          <BurgerNavigation open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
+      ) : (
+        <Navbar />
+      )}
+    </>
   )
 }
 
-
 export default Navigation
-
-
-
-
-/* // export const Navigation = () => {
-
-//   const data = useStaticQuery(graphql`
-//     {
-//       file(name: { eq: "logo" }) {
-//         childImageSharp {
-//           fluid(maxWidth: 130) {
-//             src
-//       srcSet
-//       sizes
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   return (
-//     <NavWrapper>
-//       <Logo
-//         src={data.file.childImageSharp.fluid.src}
-//         srcSet={data.file.childImageSharp.fluid.srcSet}
-//         sizes={data.file.childImageSharp.fluid.sizes}
-//       />
-//       <NavList>
-//         <Link>O nas</Link>
-//         <Link>Koncerty</Link>
-//         <Link>Muzyka</Link>
-//         <Link>Kontakt</Link>
-//       </NavList>
-//     </NavWrapper>
-//   )
-// } */

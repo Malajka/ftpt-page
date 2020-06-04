@@ -7,9 +7,9 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-layout`,
+
     `gatsby-plugin-sass`,
 
     {
@@ -18,12 +18,13 @@ module.exports = {
         fonts: [
           {
             family: `Raleway`,
-            // subsets: [`latin`],
+            subsets: [`latin-ext`],
             variants: [`400`, `500`, `600`],
           },
           {
             family: `Poiret One`,
-            // variants: [`400`, `700`],
+            variants: [`400`, `700`],
+            subsets: [`latin-ext`],
           },
         ],
       },

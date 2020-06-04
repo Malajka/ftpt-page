@@ -17,6 +17,7 @@ const MainStyles = createGlobalStyle`
         margin:0;
         font-family: 'Raleway';
         text-rendering: optimizeLegibility;
+        background:#000000;
 
         }
 
@@ -24,7 +25,8 @@ const MainStyles = createGlobalStyle`
         padding:0;
         cursor:pointer;
         font-family: 'Raleway';
-
+        border: none;
+        border-radius: 2.3px;
     }
 
     ul{
@@ -34,4 +36,4 @@ const MainStyles = createGlobalStyle`
 
     `
 
-export default MainStyles;
+export default MainStyles

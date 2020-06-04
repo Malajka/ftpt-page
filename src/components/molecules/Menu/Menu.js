@@ -1,12 +1,12 @@
 import React from "react"
 import { bool } from "prop-types"
 import { StyledMenu } from "components/molecules/Menu/Menu.styled.js"
-import Link from "components/atoms/Link/Link"
+import MainLink from "components/atoms/MainLink/MainLink"
 
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
-      <Link>About us</Link>
+      {/* <Link>About us</Link>
       <Link href="/">
         <span role="img" aria-label="price">
           &#x1f4b8;
@@ -18,7 +18,7 @@ const Menu = ({ open }) => {
           &#x1f4e9;
         </span>
         Contact
-      </Link>
+      </Link> */}
     </StyledMenu>
   )
 }
