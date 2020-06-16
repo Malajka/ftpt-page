@@ -1,4 +1,4 @@
-
+require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
@@ -7,7 +7,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
 
     `gatsby-plugin-sass`,
@@ -36,8 +36,24 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `header`,
+        path: `${__dirname}/src/content/header`,
+      },
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.API_DATO_CMS,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-mdx`,
+    `gatsby-source-datocms`,
+
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

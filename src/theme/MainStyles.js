@@ -18,6 +18,7 @@ const MainStyles = createGlobalStyle`
         font-family: 'Raleway';
         text-rendering: optimizeLegibility;
         background:#000000;
+        background:#ffffff;
 
         }
 
@@ -32,6 +33,9 @@ const MainStyles = createGlobalStyle`
     ul{
         padding:0;
         margin:0;
+    }
+    a{
+    text-decoration:none;
     }
 
     `

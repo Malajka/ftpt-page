@@ -3,7 +3,7 @@
  import { graphql, useStaticQuery } from "gatsby"
  import styled from "styled-components"
  import { Link } from "gatsby"
-// import Link from "components/atoms/Link/Link"
+ import LinkList from "components/molecules/LinkList/LinkList"
 
 const NavWrapper = styled.div`
   display: flex;
@@ -32,8 +32,8 @@ const Logo = styled.img``
         childImageSharp {
           fluid(maxWidth: 110) {
             src
-      srcSet
-      sizes
+            srcSet
+            sizes
           }
         }
       }
@@ -42,16 +42,14 @@ const Logo = styled.img``
 
   return (
     <NavWrapper>
+      <Link to ="/">
       <Logo
         src={data.file.childImageSharp.fluid.src}
         srcSet={data.file.childImageSharp.fluid.srcSet}
         sizes={data.file.childImageSharp.fluid.sizes}
-      />
+      /></Link>
       <NavList>
-        <Link to="/about/" >O nas</Link>
-        <Link to="/404">Koncerty</Link>
-        <Link>Muzyka</Link>
-        <Link>Kontakt</Link>
+       <LinkList/>
       </NavList>
     </NavWrapper>
   )

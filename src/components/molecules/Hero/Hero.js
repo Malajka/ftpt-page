@@ -12,11 +12,11 @@ const HeaderWrapper = styled.div`
   text-align: center;
 `
 
-const Hero = () => (
+const Hero = ({children}) => (
   <>
     <StyledHero />
     <HeaderWrapper>
-      <Header>Najbliższy koncert 26 września 2020</Header>
+      <Header>{children}</Header>
       <Button hero>Więcej informacji</Button>
     </HeaderWrapper>
   </>
