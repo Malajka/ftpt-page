@@ -2,6 +2,8 @@ export const theme = {
   primaryDark: "#0D0C1D",
   primaryLight: "#EFFFFA",
   primaryHover: "#343078",
+  boxShadow: "0px 0px 25px -1px #cc202559",
+  boxRadius: "10px",
   red:"#cc2025",
   yellow:"#ffe600",
   mobile: "576px",

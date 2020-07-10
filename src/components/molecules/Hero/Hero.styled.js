@@ -14,3 +14,13 @@ export const StyledHero = styled.div`
            /* color: pink; */
          }
        `
+      export  const HeaderWrapper = styled.div`
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+         h2 {
+           color: #fff;
+         }
+       `

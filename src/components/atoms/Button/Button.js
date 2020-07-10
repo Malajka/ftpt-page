@@ -10,7 +10,7 @@ const Button = styled.button`
     hero &&
     css`
       background-color: ${({ theme }) => theme.red};
-      opacity:0.7;
+       opacity:0.7;
 
       &:hover{
           border:1.3px solid ;

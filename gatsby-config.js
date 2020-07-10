@@ -44,15 +44,40 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-datocms`,
+      resolve: `gatsby-source-airtable`,
       options: {
-        apiToken: process.env.API_DATO_CMS,
+        apiKey: process.env.API_AIRTABLE,
+        tables: [
+          {
+            baseId: "app6D3juKCtKtNCuA",
+            tableName: "Hero",
+          },
+          {
+            baseId: "app6D3juKCtKtNCuA",
+            tableName: "Concert",
+          },
+          {
+            baseId: "app6D3juKCtKtNCuA",
+            tableName: "Tour",
+          },
+          {
+            baseId: "app6D3juKCtKtNCuA",
+            tableName: "About",
+            mapping: { info: "text/markdown" },
+          },
+          {
+            baseId: "app6D3juKCtKtNCuA",
+            tableName: "Band",
+            mapping: { description: "text/markdown" },
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-mdx`,
-    `gatsby-source-datocms`,
+
+    `gatsby-transformer-remark`,
 
     // {
     //   resolve: `gatsby-plugin-manifest`,

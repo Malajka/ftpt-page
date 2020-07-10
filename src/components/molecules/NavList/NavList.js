@@ -16,14 +16,14 @@ const StyledLink = styled(Link)`
     `};
 `
 
-const LinkList = () => {
+const NavList = () => {
   return (
     <>
       <StyledLink to="/about/">O nas</StyledLink>
-      <StyledLink to="/404">Koncerty</StyledLink>
-      <StyledLink>Muzyka</StyledLink>
+      <StyledLink to="/concerts">Koncerty</StyledLink>
+      <StyledLink to="/404">Muzyka</StyledLink>
       <StyledLink>Kontakt</StyledLink>
     </>
   )
 }
-export default LinkList
+export default NavList

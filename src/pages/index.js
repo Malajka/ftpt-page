@@ -16,22 +16,30 @@ import Layout from "layouts/index.js"
 //     }
 //   }
 // `
-// export const query = graphql`
-//   {
-//     allDatoCmsHero {
-//       nodes {
-//         heroText
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+         {
+           allAirtable(filter: { table: { eq: "Hero" } }) {
+             edges {
+               node {
+
+                 data {
+                   concert
+                 }
+               }
+             }
+           }
+         }
+       `
 
 
 const IndexPage = ({ data }) => {
 
                                   return (
                                     <Layout>
-                                      {/* <Hero> {data.allDatoCmsHero.nodes[0].heroText} </Hero> */}
+                                      {/* {console.log(data.allAirtable.edges[0])} */}
+                                      <Hero>
+                                        {data.allAirtable.edges[0].node.data.concert }
+                                      </Hero>
                                       <Video />
                                     </Layout>
                                   )

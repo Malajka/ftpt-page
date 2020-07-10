@@ -1,5 +1,7 @@
 import React from "react"
-import InfoSection from "components/organisms/InfoSection/InfoSection"
+import AboutSection from "components/organisms/AboutSection/AboutSection"
+import BandSection from "components/organisms/BandSection/BandSection"
+
 import { graphql } from "gatsby"
 // import { Link } from "gatsby"
 
@@ -12,37 +14,57 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      {/* {data.allDatoCmsPartytura.edges.map((item) =>
-      <>
-      <p>{item.node.name}</p>
-      <p>{item.node.kaka}</p>
-      </>
-      )} */}
-      <InfoSection data={data}/>
+      <AboutSection data={data.about} />
+      <BandSection data={data.band} />
     </Layout>
   )
 }
 export default AboutPage
-
 export const query = graphql`
          {
-           allDatoCmsAbout {
-             edges {
-               node {
-                 title
+           about: allAirtable(
+             sort: { fields: id, order: ASC }
+             filter: { table: { eq: "About" } }
+           ) {
+             nodes {
+               data {
                  excerpt
-                 paragraph
-                 id
-                 image {
-                   alt
+                 title
+                 img {
                    url
                  }
-                 paragraphImg {
-                   alt
+                 bgImg {
                    url
+                 }
+                 info {
+                   childMarkdownRemark {
+                     rawMarkdownBody
+                   }
+                 }
+               }
+             }
+           }
+           band: allAirtable(
+             sort: { fields: id, order: ASC }
+             filter: { table: { eq: "Band" } }
+           ) {
+             edges {
+               node {
+                 data {
+                   img {
+                     url
+                   }
+
+                   description {
+                     childMarkdownRemark {
+                       rawMarkdownBody
+                     }
+                   }
                  }
                }
              }
            }
          }
        `
+
+

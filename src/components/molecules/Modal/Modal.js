@@ -21,13 +21,13 @@ const StyledModal = styled.div`
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 90vw;
-  height: calc(100% - 100px);
-  padding: 2rem 5rem;
+  width: 95vw;
+  height: 88vh;
+   padding: 2rem 5rem;
   position: absolute;
   z-index: 200;
-  /* background: #ffffff; */
-  background: url(${({ bgImg }) => bgImg});
+  background: #ffffff;
+   background: url(${({ bgImg }) => bgImg});
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
@@ -38,10 +38,11 @@ const StyledModal = styled.div`
   p {
     font-size: 1.9rem;
     line-height: 1.5;
-    width: 50%;
+    width: 95%;
   }
   button {
     right: 0;
+    bottom: 5%;
     position: absolute;
   }
 `

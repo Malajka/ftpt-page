@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-const Paragraph = styled.h2`
+const Paragraph = styled.p`
   color: ${({ theme }) => theme.primaryLight};
   text-transform: uppercase;
   font-size: 1.6rem;
