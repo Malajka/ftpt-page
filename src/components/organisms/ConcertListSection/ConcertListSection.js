@@ -13,7 +13,7 @@ const ConcertListSection = ({ data }) => (
   <>
     {/* <Header title>Koncert</Header> */}
     <StyledWrapper>
-      
+
       <ConcertList data={data} />
     </StyledWrapper>
   </>

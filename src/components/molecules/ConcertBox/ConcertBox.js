@@ -8,6 +8,7 @@ import place from "assets/images/place.png"
 import time from "assets/images/time.png"
 import calendar from "assets/images/calendar.png"
 
+
 import {
   StyledBox,
   StyledImg,

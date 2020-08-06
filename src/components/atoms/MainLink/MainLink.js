@@ -14,5 +14,3 @@ const MainLink = styled.a`
 `
 export default MainLink
 
-// /* background-color: ${({  theme }) =>
-//     'red' ? theme.zen : theme.web}; *

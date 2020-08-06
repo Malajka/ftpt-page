@@ -1,15 +1,18 @@
 import styled from "styled-components"
 
+
 export const StyledWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 8%;
-`
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         margin-bottom: 8%;
+         /* background-image: url(${({ background }) => background}); */
+        
+       `
 export const StyledBox = styled.div`
 display:flex;
 display: flex;
-background: #000;
+/* background: #000; */
 border-radius: ${({ theme }) => theme.boxRadius};
 width:100%;
 img{
@@ -32,6 +35,7 @@ img{
   p,a{
     color:#fff;
         padding: 1rem;
+        max-width: 50%;
     span{
       padding-left:10px;
     }

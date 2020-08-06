@@ -1,17 +1,12 @@
 import styled from "styled-components"
 
-// export const StyledWrapper = styled.div`
-//          display: flex;
-//          flex-wrap: wrap;
-//          justify-content: space-between;
-//          margin-bottom: 8%;
-//        `
+      `
 export const StyledBox = styled.div`
          width: 48%;
          margin-bottom: 20px;
          background: url(${({ bg }) => bg});
          background-size: cover;
-         height: 400px;
+         height: 500px;
          box-shadow: ${({ theme }) => theme.boxShadow};
          border-radius: ${({ theme }) => theme.boxRadius};
 
